@@ -153,11 +153,46 @@ Now press (Ctrl-X) to exit
     cd frappe-bench/
     bench start
     
-### STEP 14 create a site in frappe bench 
+### STEP 14 create an app in frappe bench 
     
-    bench new-site dcode.com
+    To create our Library Management app, run the new-app command:
     
-    bench use dcode.com
+    $ bench new-app library_management
+      App Title (default: Library Management):
+      App Description: Library Management System
+      App Publisher: Faris Ansari
+      App Email: faris@example.com
+      App Icon (default 'octicon octicon-file-directory'):
+      App Color (default 'grey'):
+      App License (default 'MIT'):
+      'library_management' created at /home/frappe/frappe-bench/apps/library_management
+
+      Installing library_management
+      $ ./env/bin/pip install -q -U -e ./apps/library_management
+      $ bench build --app library_management
+      yarn run v1.22.4
+      $ FRAPPE_ENV=production node rollup/build.js --app library_management
+      Production mode
+      ✔ Built js/moment-bundle.min.js
+      ✔ Built js/libs.min.js
+      ✨  Done in 1.95s.
+      
+      You will be prompted with details of your app, fill them up and an app named library_management will be created in the apps folder.
+    
+### STEP 15 Create a new site 
+    
+    To create a new site, run the following command from the frappe-bench directory:
+    
+      $ bench new-site library.test
+      MySQL root password:
+
+      Installing frappe...
+      Updating DocTypes for frappe        : [========================================] 100%
+      Updating country info               : [========================================] 100%
+      Set Administrator password:
+      Re-enter Administrator password:
+      *** Scheduler is disabled ***
+      Current Site set to library.test
 
     
 
