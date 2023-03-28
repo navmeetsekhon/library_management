@@ -159,32 +159,6 @@ Now press (Ctrl-X) to exit
     
     bench use dcode.com
 
-### STEP 15 install ERPNext latest version in bench & site
-
-    
-    bench get-app payments
-    
-    bench get-app erpnext --branch version-14
-    ###OR
-    bench get-app https://github.com/frappe/erpnext --branch version-14
-
-    bench --site dcode.com install-app erpnext
-    
-    bench start
-    
-### Step 16 setup production
-    
-    sudo bench setup production dcode-frappe
-    bench restart
-
-#### If bench restart is not worked run the following command again with all Questions Yes
-    
-    sudo bench setup production dcode-frappe
-    
-#### if js and css file is not loading on login window run the following command
-
-    sudo chmod o+x /home/dcode-frappe
-    
     
 
     
