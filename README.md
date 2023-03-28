@@ -1,5 +1,5 @@
 # Frappe-Library-Management-Version-14--in-Ubuntu-22.04-LTS
-A complete Guide to Install Frappe/ERPNext version 14  in Ubuntu 22.04 LTS
+A complete Guide to Install Frappe version 14 and create library management system in Ubuntu 22.04 LTS
 
 
 
@@ -15,6 +15,7 @@ A complete Guide to Install Frappe/ERPNext version 14  in Ubuntu 22.04 LTS
       cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
       NGINX                                         (proxying multitenant sites in production)
 
+![image](https://user-images.githubusercontent.com/64701624/228231508-e67437df-c27d-41c6-b524-faf9fd506299.png)
 
 
 ### STEP 1 Install git
@@ -196,7 +197,40 @@ Now press (Ctrl-X) to exit
       
       Now, you will have a new folder named library.test in the sites directory.
 
+      This command will create a new database, so you need to enter your MySQL root password. It will also ask to set the password for the                     Administrator user, just set a password that you won't forget. This will be useful later.
 
-    
+      Now, you will have a new folder named library.test in the sites directory.
 
+
+  ### STEP 16 Access the site
+      
+      We need to tell bench to use our site which is library.test by using this command.
+      
+      $ bench use library.test
+      
+      Access it on http://localhost:8000 in our browser.
+      
+   ### STEP 17 Install app on site
+   
+     To install our Library Management app on our site, run the following command:
+
+      $ bench --site library.test install-app library_management
+
+      Installing library_management...
+      
+      
+     To confirm if the app was installed, run the following command:
+     
+      $ bench --site library.test list-apps
+      frappe
+      library_management
+     You should see frappe and library_management as installed apps on your site.
+
+   ### STEP 18 Login to Desk 
+      Go to http://library.test:8000 and it should show you a login page.
+
+      Enter Administrator as the user and password that you set while creating the site.
+      
+   ### STEP 19 Creating a DocType
+      Before we can create DocTypes, we need to enable developer mode on our bench.
     
