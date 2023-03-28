@@ -193,6 +193,9 @@ Now press (Ctrl-X) to exit
       Re-enter Administrator password:
       *** Scheduler is disabled ***
       Current Site set to library.test
+      
+      Now, you will have a new folder named library.test in the sites directory.
+
 
     
 
